@@ -1,0 +1,11 @@
+CREATE FULLTEXT CATALOG ProductCatalog AS DEFAULT;
+
+CREATE FULLTEXT INDEX ON SearchProducts
+(
+    Name LANGUAGE 1033,
+    Description LANGUAGE 1033,
+    Tags LANGUAGE 1033
+)
+KEY INDEX IX_SearchProducts_PartNumber
+ON ProductCatalog
+WITH CHANGE_TRACKING AUTO;
